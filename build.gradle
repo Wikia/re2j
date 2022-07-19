@@ -10,7 +10,7 @@ plugins {
   id 'signing'
 
   // code coverage support
-  id 'net.saliman.cobertura' version '2.5.4'
+  id 'net.saliman.cobertura' version '4.0.0'
 
   // Add license plugin. By default, this plugin only applies to the root
   // project. Since we need license enforcement for benchmarks and the
@@ -84,13 +84,13 @@ dependencies {
   errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
   errorprone 'com.google.errorprone:error_prone_core:2.10.0'
 
-  testCompile 'junit:junit:4.12'
-  testCompile 'com.google.gwt:gwt-dev:2.9.0'
-  testCompile 'com.google.gwt:gwt-user:2.9.0'
-  testCompile 'com.google.truth:truth:0.36'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'com.google.gwt:gwt-dev:2.9.0'
+  testImplementation 'com.google.gwt:gwt-user:2.9.0'
+  testImplementation 'com.google.truth:truth:0.36'
 
   // Cobertura requires slf4j at runtime
-  testRuntime "org.slf4j:slf4j-api:1.7.10"
+  testRuntimeOnly "org.slf4j:slf4j-api:1.7.10"
 }
 
 task sourceJar(type: Jar) {
